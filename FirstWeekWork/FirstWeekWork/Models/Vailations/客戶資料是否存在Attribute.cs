@@ -19,7 +19,7 @@ namespace FirstWeekWork.Models.Vailations
         public override bool IsValid(object value)
         {
             int outI = 0;
-            if (int.TryParse(value.ToString(), out outI)) return false;
+            if (int.TryParse(value.ToString(), out outI) == false ) return false;
 
             客戶資料Repository 客戶 = RepositoryHelper.Get客戶資料Repository();
             if (客戶.All().Count(s => s.Id == outI) == 0)
